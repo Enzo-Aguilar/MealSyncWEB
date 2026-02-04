@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/main.css">
-    <script type="module" src="/JS/index.js" defer></script>
-    <title>MealSync | Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/CSS/main.css">
+  <script type="module" src="/JS/index.js" defer></script>
+  <title>MealSync | Login</title>
 </head>
 <body>
-    <header>
-        <h1>MealSync | Main Menu</h1>
-    </header>
-   <div id="container">
-    <div id="header">
- 
-    </div>
-     <div id="container">
-        <h2>Welcome To mealSync!</h2>
-        <form id="form">
-            <label for="email" class="Labels">Email</label>
-            <input type="email" id="email" placeholder="Email" required>
+    <nav class="Navbar">
+        <a href="/" class="Logo">
+            <img src="/IMG/mealSync_branco.png" alt="MealSync Logo" height="100">
+        </a>
+        <ul class="Nav-links">
+            <li><a href="/HTML/about.html">About</a></li>
+        </ul>
+    </nav>
 
-            <label for="password" class="Labels">Password</label>
-            <input type="password" id="password" placeholder="Password" required>
+    <div class="Container">
+        <form>
+            <label for="email" class="Labels" id="emai_label">Email</label>
+            <input class="Input-form" type="email" id="email_input" placeholder="example@epge.pt" required>
 
-            <button type="submit">Log In</button>
-            <p>Novo no MealSync?<a href="/HTML/register.html">Registre-se já</a></p>
+            <label for="password" class="Labels" id="password_label">Password</label>
+            <input class="Input-form" type="password" id="password_input" placeholder="Password" required>
 
+            <button type="submit">Login</button>
+
+            <p>Novo no MealSync? <a href="/HTML/register.html">Registar-se</a></p>
         </form>
-        <div class="Res">
-
-        </div>
-     </div>
-   </div>
+    </div>
+    <div class="Message">
+        <p id="chars" class="Invalid"></p> 
+        <p id="containsUsername" class="Invalid"></p>
+        <p id="length" class="Invalid"></p>
+        <p id="other" class="Invalid"></p>          
+        <p id="spaces" class="Invalid"></p>
+    </div>
 </body>
 </html>

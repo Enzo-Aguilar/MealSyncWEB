@@ -1,34 +1,38 @@
-userName<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/main.css">
-    <script  type="module" src="/JS/register.js" defer></script>
-    <title>MealSync | Register</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/CSS/main.css">
+  <script  type="module" src="/JS/register.js" defer></script>
+  <title>MealSync | Register</title>
 </head>
 <body>
     <header>
         <h1>MealSync | Register</h1>
     </header>
         
-    <div id="container">    
-        <h2>Welcome to mealSync!</h2>
-        <form id="form">
-            <label for="username" class="Labels">Username</label>
-            <input type="text" id="username" placeholder="Username" required>
-            
+    <div class="Container">    
+        <form class="Form">
             <label for="email" class="Labels">Email</label>
-            <input type="email" id="email" placeholder="example@epge.pt" required>
+            <input class="Input-form" type="email" id="email" placeholder="example@epge.pt" required>
+            
+            <label for="username" class="Labels">Username</label>
+            <input class="Input-form" type="text" id="username" placeholder="Username" required>
             
             <label for="password" class="Labels">Password</label>
-            <input type="password" id="password" placeholder="Password"  required><br>
+            <input class="Input-form" type="password" id="password" placeholder="Password"  required><br>
             
             <button type="submit">Register</button>
+
+            <p>Já tem uma conta? <a href="/HTML/index.html">Faça login</a>!!</p>
         </form>
     </div>
-    <div class="Res">
-        
+    <div class="Message">
+        <p id="email_p" class="Invalid"></p> 
+        <p id="other" class="Invalid"></p>          
+        <p id="password_p" class="Invalid"></p>
+        <p id="username_p" class="Invalid"></p>
     </div>
 </body>
 </html>
