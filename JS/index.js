@@ -1,25 +1,44 @@
 import { emailLength, emailSpecialChar, is_EPGE } from "./validator.js";
+import { passwordLength } from "./validator.js";
 
 const submitBtn = document.getElementById("submitBtn");
 const email = document.getElementById("email_input");
+const password = document.getElementById("password_input")
 const messager = document.getElementById("msg")
 
 submitBtn.addEventListener("click", () => {
   
-  if(!emailLength(email)){
-    messager.innerHTML = "[ERROR] email muito grande ou muito pequeno"
-    email.value = " ";
-  }
-  messager.innerHTML = " ";
-  if (!emailSpecialChar(email.value.trim())) {
-    messager.innerHTML = "[ERROR] Caracteres inválidos";
-    email.value = "";
+/* =====================
+  EMAIL FUNCS
+===================== */
+
+  if(email.value != " "){
+
+    messager.innerHTML = "- [ERROR] email vazio"
+
+    if(!emailLength(email)){
+      messager.innerHTML = "- [ERROR] email muito grande ou muito pequeno"
+    }
+    
+    if (!emailSpecialChar(email.value.trim())) {
+      messager.innerHTML = "- [ERROR] Caracteres inválidos";
+    }
+  
+    if(!is_EPGE(email)){
+      messager.innerHTML = "- [ERROR] Email precisa ser obrigatoriamente @epge.pt " 
+    }
   }
 
- /*is_EPGE(email)
- ?alert("Im true")
- :alert("IM false")
-*/
+/* =====================
+   PASSWORD FUNCS
+===================== */
+
+ if(password.value = ""){
+   if(!passwordLength(password)){
+     messager.innerHTML = "[ERROR] Password muito curto"
+     email.value = "";
+   }
+ }
 });
 
 

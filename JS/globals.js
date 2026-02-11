@@ -7,7 +7,6 @@
     root.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
 
-    // Update the button emoji based on the theme
     updateButtonEmoji(theme);
     updateLogo(theme);
   }

@@ -1,3 +1,7 @@
+/* =====================
+ EMAIL CHECKS
+===================== */
+
 export function emailLength(email){
     
    if(email.value.length < 15 || email.value.length > 85){
@@ -12,12 +16,25 @@ export function emailSpecialChar(email) {
 }
 
 export function is_EPGE(email){
+    email = email.value
     if(email.endsWith("@epge.pt")){
         return true;
     }
     return false;
 }
 
-export function passwordCheck(password) {}
+/* =====================
+   PASSWORD CHECKS
+===================== */
 
-export function usernameCheck(username) {}
+export function passwordLength(password){
+    if(password.value.length < 6 ){
+     return false;   
+    }
+    return true;
+}
+
+/* =====================
+   PASSWORD CHECKS
+===================== */
+
