@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" data-theme ="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/CSS/main.css">
+  <script type="module" src="/JS/globals.js" defer></script>
   <script type="module" src="/JS/home.js" defer></script>
+  <link rel="stylesheet" href="/CSS/main.css">
   <title>MealSync | Home</title>
 </head>
 <body>
   <nav class="Navbar">
-    <a href="/" onclick="reload()">
-      <img src="/IMG/mealSync_preto.png" alt="MealSync Logo" height="100">
+    <a href="/">
+      <img  src="/IMG/MealSyncBranco.png" alt="MealSync Logo" class="Logo"  height="50px" href="/HTML/home.html">
     </a>
     <ul class="Nav-links">
-      <li><a href="home.html"><button>Home</button></a></li>
-      <li><a href="about.html"><button>About</button></a></li>
-      <li><a href="meals.html"><button  >Meals</button></a></li>
-      <li><a href="/"><button onclick="change_theme()">Mudar Tema</button></a></li>
+      <li><a href="/HTML/about.html"><button>About</button></a></li>
+      <li><a href="/HTML/meals.html"><button>Refeições</button></a></li>
+      <li><a href="/HTML/logout.html"><button>Sair</button></a></li>
+      <li><a href="/HTML/home.html"><button id="themeToggle">☽</button></a></li>
+
+      <div class="Message">
+        <p class="Invalid" id="msg"></p>
+      </div>
     </ul>
   </nav>
 </body>

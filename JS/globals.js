@@ -1,7 +1,7 @@
-(function () {
+(function ()  {
   const root = document.documentElement;
-  const themeToggleButton = document.querySelector("#themeToggle");
-  const logoImg = document.getElementById("logo");
+  const toggleButton = document.querySelector("#themeToggle");
+  const logoImg = document.querySelector(".Logo");
 
   function applyTheme(theme) {
     root.setAttribute("data-theme", theme);
@@ -12,57 +12,50 @@
   }
 
   function toggleTheme() {
-    const current = root.getAttribute("data-theme") || "light";
-    const newTheme = current === "dark" ? "light" : "dark";
+    const current = root.getAttribute("data-theme") || "ligth";
+    const newTheme = current === "dark" ? "ligth":"dark";
     applyTheme(newTheme);
   }
 
   function updateButtonEmoji(theme) {
     if (theme === "dark") {
-      themeToggleButton.textContent = "❂";
+      toggleButton.textContent = "❂";
     } else {
-      themeToggleButton.textContent = "☽";
+      toggleButton.textContent = "☽";
     }
   }
 
   function updateLogo(theme){
-    if(!logoImg) return;
+    if(!logoImg)return;
 
     if(theme == "dark"){
       logoImg.src = "/IMG/MealSyncPreto.png";
-    }
-    else{
-      logoImg.src = "/IMG/MealSyncBranco.png"
+    }else{
+      logoImg.src = "/IMG/MealSyncBranco.png";
     }
   }
   function initTheme() {
-    const saved = localStorage.getItem("theme");
-    if (saved) {
+    const saved  = localStorage.getItem("theme");
+    if(saved){
       applyTheme(saved);
-    } else {
-      applyTheme("light"); // Default to light theme if no preference saved
+    }else{
+      applyTheme("light");
     }
   }
 
-  // Expose globally
   window.toggleTheme = toggleTheme;
   window.initTheme = initTheme;
 })();
-  
 
+(function(){
 
-(function () {
-    
-    function softReload() {
-      // Reset scroll
-      window.scrollTo(0, 0);
-  
-      // Re-run global inits
-      if (typeof initTheme === "function") {
-        initTheme();
-      }
-    }
-  
-    window.softReload = softReload;
-  })();
-  
+  function softReload() {
+    window.scrollTo(0,0);
+  }
+
+  if(typeof initTheme === "function") {
+    initTheme();
+  }
+
+  window.softReload = softReload;
+})();

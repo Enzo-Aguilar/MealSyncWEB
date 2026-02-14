@@ -33,13 +33,17 @@ submitBtn.addEventListener("click", () => {
    PASSWORD FUNCS
 ===================== */
 
- if(password.value = ""){
+ if(password.value != ""){
    if(!passwordLength(password)){
-     messager.innerHTML = "[ERROR] Password muito curto"
+     messager.innerHTML = "- [ERROR] Password muito curta"
      email.value = "";
    }
+ }else{
+  messager.innerHTML = "- [ERROR] Campo Password Vazio"
  }
 });
+
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
